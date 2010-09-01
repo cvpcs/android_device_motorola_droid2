@@ -10,7 +10,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # device overlay
 DEVICE_PACKAGE_OVERLAYS := device/motorola/droid2/overlay
 
-# properties for shadow
+# properties for droid2
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.ril=yes \
 	persist.ril.mux.noofchannels=7 \
@@ -72,8 +72,8 @@ PRODUCT_COPY_FILES += \
 
 # copy some blank framework files to satisfy the bootclasspath of the locked kernel
 PRODUCT_COPY_FILES += \
-	device/motorola/shadow/com.motorola.android.frameworks.jar:system/framework/com.motorola.android.frameworks.jar \
-	device/motorola/shadow/com.motorola.android.widget.jar:system/framework/com.motorola.android.widget.jar
+	device/motorola/droid2/com.motorola.android.frameworks.jar:system/framework/com.motorola.android.frameworks.jar \
+	device/motorola/droid2/com.motorola.android.widget.jar:system/framework/com.motorola.android.widget.jar
 
 # include proprietaries
 ifneq ($(USE_PROPRIETARIES),)
@@ -87,14 +87,14 @@ endif
 
 # actually include the props
 $(foreach prop,$(USE_PROPRIETARIES), \
-  $(if $(wildcard device/motorola/shadow/proprietary.$(prop)), \
+  $(if $(wildcard device/motorola/droid2/proprietary.$(prop)), \
     $(eval \
 PRODUCT_COPY_FILES += $(shell \
-	cat device/motorola/shadow/proprietary.$(prop) \
-	| sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/motorola\/shadow\/proprietary\/\2:\1\2/' \
+	cat device/motorola/droid2/proprietary.$(prop) \
+	| sed -r 's/^\/(.*\/)([^/ ]+)$$/device\/motorola\/droid2\/proprietary\/\2:\1\2/' \
 	| tr '\n' ' ') \
      ), \
-    $(error Cannot include proprietaries from $(prop). List file device/motorola/shadow/proprietary.$(prop) does not exist) \
+    $(error Cannot include proprietaries from $(prop). List file device/motorola/droid2/proprietary.$(prop) does not exist) \
    ) \
  )
 endif
