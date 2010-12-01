@@ -96,8 +96,8 @@ symlink("busybox", "/system/xbin/[", "/system/xbin/[[",
         "/system/xbin/yes",
         "/system/xbin/zcat");
 ui_print("  [symlinking keypad files]");
-symlink("cdma_shadow-keypad.kcm.bin", "/system/usr/keychars/sholes-keypad.kcm.bin");
-symlink("cdma_shadow-keypad.kl", "/system/usr/keylayout/sholes-keypad.kl");
+symlink("cdma_droid2-keypad.kcm.bin", "/system/usr/keychars/sholes-keypad.kcm.bin");
+symlink("cdma_droid2-keypad.kl", "/system/usr/keylayout/sholes-keypad.kl");
 ui_print("  [symlinking hijack]");
 symlink("hijack", "/system/bin/logwrapper");
 ui_print("  [symlinking scriptybox]");

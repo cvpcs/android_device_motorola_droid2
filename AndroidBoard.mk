@@ -102,18 +102,18 @@ include $(BUILD_PREBUILT)
 # symlink some keymap stuff
 file := $(TARGET_OUT)/usr/keychars/sholes-keypad.kcm.bin
 ALL_PREBUILT += $(file)
-$(file) : $(TARGET_OUT)/usr/keychars/cdma_shadow-keypad.kcm.bin
-	@echo "Symlink: $@ -> cdma_shadow-keypad.kcm.bin"
+$(file) : $(TARGET_OUT)/usr/keychars/cdma_droid2-keypad.kcm.bin
+	@echo "Symlink: $@ -> cdma_droid2-keypad.kcm.bin"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf cdma_shadow-keypad.kcm.bin $@
+	$(hide) ln -sf cdma_droid2-keypad.kcm.bin $@
 file := $(TARGET_OUT)/usr/keylayout/sholes-keypad.kl
 ALL_PREBUILT += $(file)
-$(file) : $(TARGET_OUT)/usr/keylayout/cdma_shadow-keypad.kl
-	@echo "Symlink: $@ -> cdma_shadow-keypad.kl"
+$(file) : $(TARGET_OUT)/usr/keylayout/cdma_droid2-keypad.kl
+	@echo "Symlink: $@ -> cdma_droid2-keypad.kl"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf cdma_shadow-keypad.kl $@
+	$(hide) ln -sf cdma_droid2-keypad.kl $@
 
 # link to hijack!
 file := $(TARGET_OUT)/bin/logwrapper
