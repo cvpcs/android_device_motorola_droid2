@@ -16,7 +16,6 @@
 /system/bin/dbvc_atvc_property_set
 /system/bin/dlnasrv
 /system/bin/dmt
-/system/bin/dumpe2fs
 /system/bin/dund
 /system/bin/ecckeyd
 /system/bin/factory_reset
@@ -27,7 +26,6 @@
 /system/bin/loadpreinstalls.sh
 /system/bin/mdm_panicd
 /system/bin/modemlog
-/system/bin/mot_boot_mode
 /system/bin/mount_ext3.sh
 /system/bin/napics.sh
 /system/bin/pppd-ril
