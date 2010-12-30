@@ -45,7 +45,7 @@ USE_PV_WINDOWS_MEDIA := false
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x003FFFFF)
 BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x004FFFFF)
 BOARD_SYSTEMIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x0BDFFFFF)
-BOARD_PREINSTALLIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x)
+#BOARD_PREINSTALLIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x)
 BOARD_USERDATAIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x)
 # The size of a block that can be marked bad.
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -57,8 +57,7 @@ BOARD_EGL_CFG := device/motorola/droid2/egl.cfg
 # information to control creation of OTA package
 TARGET_OTA_SCRIPT_MODE := edify
 TARGET_OTA_NO_BOOT := true
-TARGET_OTA_NO_RECOVERY := true
-TARGET_NO_PREINSTALL := false
+TARGET_NO_RECOVERY := true
 
 # information for recovery building
 BOARD_HAS_NO_MISC_PARTITION := true
@@ -71,14 +70,12 @@ BOARD_SYSTEM_DEVICE := /dev/block/mmcblk1p21
 BOARD_SYSTEM_FILESYSTEM := auto
 BOARD_CACHE_DEVICE := /dev/block/cache
 BOARD_CACHE_FILESYSTEM := auto
-BOARD_PREINSTALL_DEVICE := /dev/block/preinstall
-BOARD_PREINSTALL_FILESYSTEM := auto
 
 # information for hijacking
 BOARD_HIJACK_EXECUTABLES := logwrapper
 #BOARD_HIJACK_LOG_ENABLE := true
-BOARD_HIJACK_UPDATE_BINARY := /preinstall/tanzanite/update-binary
-BOARD_HIJACK_BOOT_UPDATE_ZIP := /preinstall/tanzanite/update-boot.zip
-BOARD_HIJACK_RECOVERY_UPDATE_ZIP := /preinstall/tanzanite/update-recovery.zip
+BOARD_HIJACK_UPDATE_BINARY := /preinstall/recovery/update-binary
+BOARD_HIJACK_BOOT_UPDATE_ZIP := /system/etc/tanzanite-boot.zip
+BOARD_HIJACK_RECOVERY_UPDATE_ZIP := /preinstall/recovery/recovery.zip
 
 ALLOW_LGPL := true

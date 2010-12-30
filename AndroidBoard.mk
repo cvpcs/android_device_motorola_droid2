@@ -128,4 +128,16 @@ $(file) : $(TARGET_OUT)/bin/hijack
 file := $(TARGET_OUT)/bin/mount_ext3.sh
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/mount_ext3.sh | $(ACP)
-        $(transform-prebuilt-to-target)
+	$(transform-prebuilt-to-target)
+
+# add boot updater
+file := $(TARGET_OUT)/etc/tanzanite-boot.zip
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/tanzanite-boot.zip | $(ACP)
+	$(transform-prebuilt-to-target)
+
+# add droid2bootstrap configuration file
+file := $(TARGET_OUT)/etc/Droid2Bootstrap.cfg
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/Droid2Bootstrap.cfg | $(ACP)
+	$(transform-prebuilt-to-target)
