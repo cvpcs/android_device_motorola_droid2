@@ -76,7 +76,6 @@ ifneq ($(USE_PROPRIETARIES),)
 ifeq ($(filter google,$(USE_PROPRIETARIES)),)
 PRODUCT_PACKAGES += \
 	Provision \
-	LatinIME \
 	QuickSearchBox
 endif
 
